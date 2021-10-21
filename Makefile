@@ -34,9 +34,9 @@ GDB=/usr/csshare/pkgs/avr-gdb-9.2-with-python/gdb/gdb
 WHILELINENO=$$(grep -n -m 1 "while\s*(1)" source/main.c | cut -f1 -d:)
 GDBCOMMANDS=$(PATHT)commands.gdb
 GDBSCRIPT=$(PATHT)tests.gdb
-INITGDBDEBUGGER=$(PATHT)initDebugger.gdb
-GDBTESTING=-batch -x $(GDBCOMMANDS) -x $(INITGDBDEBUGGER) -x $(GDBSCRIPT)
-GDBDEBUGGING=-x $(GDBCOMMANDS) -x $(INITGDBDEBUGGER)
+INITDEBUGGER=$(PATHT)initDebugger.gdb
+GDBTESTING=-batch -x $(GDBCOMMANDS) -x $(INITDEBUGGER) -x $(GDBSCRIPT)
+GDBDEBUGGING=-x $(GDBCOMMANDS) -x $(INITDEBUGGER)
 # Python testing
 PYTESTRUNNER=$(PATHT)testRunner.py
 PYTESTS=$(PATHT)tests.py
